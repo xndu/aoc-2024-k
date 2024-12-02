@@ -1,0 +1,8 @@
+#!/bin/sh
+K="/bin/k"
+if [ "$#" -eq 1 ]; then
+	$K $1/1.k < $1/input
+	$K $1/2.k < $1/input
+else
+	$K $1/$2.k < $1/input
+fi

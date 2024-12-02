@@ -1,0 +1,10 @@
+#!/bin/sh
+YEAR=2024
+INPUT="$1/input"
+URL="https://adventofcode.com/$YEAR/day/$INPUT"
+SESSION="`/bin/cat session`"
+/bin/touch "$1/1.k"
+/bin/touch "$1/2.k"
+if [ ! -e $INPUT ]; then
+	/bin/curl --cookie "session=$SESSION" -o $INPUT --create-dirs $URL
+fi
